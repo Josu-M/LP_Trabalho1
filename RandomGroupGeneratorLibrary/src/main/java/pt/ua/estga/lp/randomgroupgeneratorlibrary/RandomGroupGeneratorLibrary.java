@@ -3,6 +3,7 @@
  */
 
 package pt.ua.estga.lp.randomgroupgeneratorlibrary;
+import java.util.*;
 
 public class RandomGroupGeneratorLibrary {
     
