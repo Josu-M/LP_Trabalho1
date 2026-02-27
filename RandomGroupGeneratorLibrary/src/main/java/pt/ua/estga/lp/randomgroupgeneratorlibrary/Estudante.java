@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package pt.ua.estga.lp.randomgroupgeneratorlibrary;
-
+import java.util.Objects;
 /**
  *
  * @author SebastianMazoSimoes
@@ -22,7 +22,7 @@ package pt.ua.estga.lp.randomgroupgeneratorlibrary;
         this.nmec = nmec;
         }
         
- //Getters para o nome e nmec, Permite o acesso destes dados para outras partes do código
+ //Getters para o nome e nmec, Permite o acesso destes dados para outras partes do código:
         public String getnome()
         {
             return nome;
@@ -33,8 +33,30 @@ package pt.ua.estga.lp.randomgroupgeneratorlibrary;
             return nmec;
         }
         
+ 
+ //Este método permite identificar quando dois estudantes são iguais:
+ 
+        @Override
+        public boolean equals(Object o)
+        {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Estudante estudante = (Estudante) o;
+            return nmec == estudante.nmec; 
+        }
+ //Cria um código para cada aluno baseado no seu nmec, para assim ser encontrado rapidamente em listas de histórico:
+         @Override
+         public int hashCode() 
+         {
+         return Objects.hash(nmec);
+         }
         
-        
+ //Facilita a visualização ao imprimir o objeto (nome + nmec):
+        @Override
+        public String toString()
+        {
+        return String.format("%s - %d", nome, nmec);
+        }
         
         
 }
