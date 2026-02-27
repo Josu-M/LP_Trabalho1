@@ -3,14 +3,14 @@
  */
 
 package pt.ua.estga.lp.randomgroupgeneratorlibrary;
+import java.util;
 
 /**
  *
  * @author josue
  */
 public class RandomGroupGeneratorLibrary {
-
-    public static void main(String[] args) {
+    public class Estudante {
         
     }
 }
