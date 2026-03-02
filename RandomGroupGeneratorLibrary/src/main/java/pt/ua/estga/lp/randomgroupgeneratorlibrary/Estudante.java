@@ -1,4 +1,4 @@
-/*
+    /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -23,7 +23,7 @@ import java.util.Objects;
         }
         
  //Getters para o nome e nmec, Permite o acesso destes dados para outras partes do código:
-        public String getnome()
+        public String getNome()
         {
             return nome;
         }

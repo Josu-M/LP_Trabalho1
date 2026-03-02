@@ -61,6 +61,6 @@ public class Grupo {
     @Override
     public String toString()
     {
-    return "Grupo:" + estudante1.getnome() + "e" + estudante2.getnome();
+    return "Grupo:" + estudante1.getNome() + "e" + estudante2.getNome();
     }
 }
