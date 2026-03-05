@@ -20,20 +20,20 @@ public class Grupo {
     
     public Grupo (Estudante e1, Estudante e2)
     {
-    this.estudante1 = e1;
-    this.estudante2 = e2;
+        this.estudante1 = e1;
+        this.estudante2 = e2;
     }
  
 //Getters para poder aceder aos alunos do grupo desde outras partes do código:
   
     public Estudante getEstudante1()
-    {
-    return estudante1;
-    }
+        {
+            return estudante1;
+        }
     public Estudante getEstudante2()
-    {
-    return estudante2;
-    }
+        {
+            return estudante2;
+        }
     
     //Este método impede que os alunos sejam emparelhados mais do que uma vez:
      @Override
@@ -54,13 +54,13 @@ public class Grupo {
     @Override
     public int hashCode()
     {
-    return Objects.hash(estudante1) + Objects.hash(estudante2);
+        return Objects.hash(estudante1) + Objects.hash(estudante2);
     }
     
 //Método que define como o grupo aparece escrito:
     @Override
     public String toString()
     {
-    return "Grupo:" + estudante1.getNome() + "e" + estudante2.getNome();
+        return "Grupo:" + estudante1.getNome() + "e" + estudante2.getNome();
     }
 }

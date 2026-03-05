@@ -17,8 +17,8 @@ public class RandomGroupGeneratorLibrary {
     
     public RandomGroupGeneratorLibrary()
     {
-    this.estudantes = new ArrayList<>();
-    this.historico = new HashSet<>(); 
+        this.estudantes = new ArrayList<>();
+        this.historico = new HashSet<>(); 
     }
     
     public void inserirEstudante(Estudante e)
@@ -31,16 +31,16 @@ public class RandomGroupGeneratorLibrary {
     
     public void carregarHistorico(List<Grupo> gruposPassados)
     {
-    this.historico.addAll(gruposPassados);
+        this.historico.addAll(gruposPassados);
     }
     
     public void inserirGrupoManual(Estudante a, Estudante b) throws Exception
     {
-    Grupo novo = new Grupo(a, b);
-    if (historico.contains(novo))
-    {
-    throw new Exception("Erro: Estes alunos já trabalharam juntos!");
-    }
+        Grupo novo = new Grupo(a, b);
+        if (historico.contains(novo))
+        {
+            throw new Exception("Erro: Estes alunos já trabalharam juntos!");
+        }
        historico.add(novo);
     }
     
@@ -73,10 +73,10 @@ public class RandomGroupGeneratorLibrary {
     
     if (!parEncontrado)
     {
-    throw new Exception ("Impossível gerar grupos: restrições de repetição violadas para" + e1.getNome());
+    throw new Exception ("Impossível gerar grupos: restrições de repetição violadas para " + e1.getNome());
     }
     }
     return novosGrupos;
     }
     
-}
+}   

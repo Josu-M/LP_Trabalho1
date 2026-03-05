@@ -18,8 +18,8 @@ import java.util.Objects;
 //Construtor para criar o objeto estudante e os seus dados:
         public Estudante (String nome, int nmec)
         {
-        this.nome = nome;
-        this.nmec = nmec;
+            this.nome = nome;
+            this.nmec = nmec;
         }
         
  //Getters para o nome e nmec, Permite o acesso destes dados para outras partes do código:
@@ -28,7 +28,7 @@ import java.util.Objects;
             return nome;
         }
         
-        public int getnmec()
+        public int getNmec()
         {
             return nmec;
         }
@@ -48,14 +48,14 @@ import java.util.Objects;
          @Override
          public int hashCode() 
          {
-         return Objects.hash(nmec);
+            return Objects.hash(nmec);
          }
         
  //Facilita a visualização ao imprimir o objeto (nome + nmec):
         @Override
         public String toString()
         {
-        return String.format("%s - %d", nome, nmec);
+            return String.format("%s - %d", nome, nmec);
         }
         
         
