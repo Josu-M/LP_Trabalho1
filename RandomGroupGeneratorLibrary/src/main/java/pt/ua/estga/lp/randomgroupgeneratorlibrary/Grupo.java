@@ -43,6 +43,11 @@ public class Grupo {
      if ( o == null || getClass() != o.getClass()) return false;    
      Grupo grupo = (Grupo) o;
      
+    //Cria um grupo só para a pessoa que falta
+    if (this.estudante2 == null || grupo.estudante2 == null) {
+        return Objects.equals(this.estudante1, grupo.estudante1) && Objects.equals(this.estudante2, grupo.estudante2);
+    }
+        
 //O grupo A + B = B + A:
      
     return (Objects.equals(estudante1, grupo.estudante1) && Objects.equals(estudante2, grupo.estudante2)) ||
@@ -61,6 +66,6 @@ public class Grupo {
     @Override
     public String toString()
     {
-        return "Grupo:" + estudante1.getNome() + "e" + estudante2.getNome();
+        return "Grupo: " + estudante1.getNome() + " e " + estudante2.getNome();
     }
 }

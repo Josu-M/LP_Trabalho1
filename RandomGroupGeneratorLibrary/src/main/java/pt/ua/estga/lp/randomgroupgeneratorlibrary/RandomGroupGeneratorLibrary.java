@@ -50,31 +50,30 @@ public class RandomGroupGeneratorLibrary {
     Collections.shuffle(disponiveis);
     List<Grupo> novosGrupos =  new ArrayList<>();
     
-    while (disponiveis.size() >= 2)
-    {
-    Estudante e1 = disponiveis.remove(0);
-    boolean parEncontrado = false;  
-    
-    for (int i = 0; i < disponiveis.size(); i++)
-    {
-    Estudante e2 = disponiveis.get(i);
-    Grupo tentativa = new Grupo(e1, e2);
-    
-    if (!historico.contains(tentativa))
-    {
-    novosGrupos.add(tentativa);
-    historico.add(tentativa);
-    disponiveis.remove(i);
-    parEncontrado = true;
-    break;
-    }
-    
-    }
-    
-    if (!parEncontrado)
-    {
-    throw new Exception ("Impossível gerar grupos: restrições de repetição violadas para " + e1.getNome());
-    }
+    // SUBSTITUIR POR ISTO:
+    while (!disponiveis.isEmpty()) {
+        Estudante e1 = disponiveis.remove(0);
+        Estudante e2 = null; // Começa como nulo (lugar vazio)
+
+        // Tenta encontrar um parceiro na lista de disponíveis
+        for (int i = 0; i < disponiveis.size(); i++) {
+            Estudante candidato = disponiveis.get(i);
+            Grupo tentativa = new Grupo(e1, candidato);
+
+            if (!historico.contains(tentativa)) {
+                e2 = disponiveis.remove(i); // Encontrou par, remove-o da lista
+                break;
+            }
+
+        }
+
+        Grupo novoGrupo = new Grupo(e1, e2);
+        novosGrupos.add(novoGrupo);
+
+        // Só adicionamos ao histórico se for um par real (e2 não nulo)
+        if (e2 != null) {
+            historico.add(novoGrupo);
+        }
     }
     return novosGrupos;
     }
