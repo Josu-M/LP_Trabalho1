@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package pt.ua.estga.lp.randomgroupgeneratorlibrary;
+
 import java.util.Objects;
 /**
  *
@@ -33,6 +34,12 @@ import java.util.Objects;
             return nmec;
         }
         
+        //Facilita a visualização ao imprimir o objeto (nome + nmec):
+        @Override
+        public String toString()
+        {
+            return String.format("%s, %d", nome, nmec);
+        }
  
  //Este método permite identificar quando dois estudantes são iguais:
  
@@ -53,12 +60,7 @@ import java.util.Objects;
             return Objects.hash(nmec);
          }
         
- //Facilita a visualização ao imprimir o objeto (nome + nmec):
-        @Override
-        public String toString()
-        {
-            return String.format("%s, %d", nome, nmec);
-        }
+ 
         
         
 }

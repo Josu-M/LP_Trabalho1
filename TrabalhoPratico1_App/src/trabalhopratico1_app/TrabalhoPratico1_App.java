@@ -7,6 +7,7 @@ import pt.ua.estga.lp.randomgroupgeneratorlibrary.*;
 import lp.trabalho1.*;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -22,6 +23,7 @@ public class TrabalhoPratico1_App {
         // Instanciar as bibliotecas
         RandomGroupGeneratorLibrary gerador = new RandomGroupGeneratorLibrary();
         IODataClass io = new IODataClass();
+        Scanner teclado = new Scanner(System.in);
         
         try {
             
@@ -43,7 +45,27 @@ public class TrabalhoPratico1_App {
                     
                     System.out.println( novo.getNome() + "," + novo.getNmec() );
                 }
-            } 
+            }
+            
+            //Inserçao manual
+            System.out.print("\nDeseja inserir mais alunos manualmente? (s/n): ");
+            String opcao = teclado.nextLine();
+            
+            while (opcao.equalsIgnoreCase("s"))
+            {
+                System.out.print("Nome do estudante: ");
+                String nomeManual = teclado.nextLine().trim().toLowerCase();
+                
+                System.out.print("NMEC: ");
+                int nmecManual = Integer.parseInt(teclado.nextLine());
+                
+                Estudante eManual = new Estudante(nomeManual, nmecManual);
+                gerador.inserirEstudante(eManual);
+                
+                System.out.println("Estudante " + nomeManual + " inserido com sucesso!");
+                System.out.print("\nInserir outro? (s/n): ");
+                opcao = teclado.nextLine();
+            }
 
             // Carregar Histórico
             GroupInfo[] historicoInput = io.loadGroups(ficheiroHistorico);
@@ -94,7 +116,7 @@ public class TrabalhoPratico1_App {
                         linha = g.getEstudante1().getNome() + "," + g.getEstudante1().getNmec() + "(Sem par)";
                     }
                     
-                    // Guardar para o ficheiro TXT
+                    // Guardar para o ficheiro.txt
                     resultadosParaGravar[i] = linha;
                     
                     // Mostrar no terminal
@@ -115,6 +137,9 @@ public class TrabalhoPratico1_App {
            
             
     }
+        finally {
+            teclado.close();
+        }
 }
 
 
