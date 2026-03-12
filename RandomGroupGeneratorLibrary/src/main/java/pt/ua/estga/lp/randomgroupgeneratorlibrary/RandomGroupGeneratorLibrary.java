@@ -28,7 +28,7 @@ public class RandomGroupGeneratorLibrary {
         estudantes.add(e);
         }
     }
-    
+    //Carregar o histórico de grupos anteriores para evitar repetições e gerar novos grupos, garantindo a aleatoriedade e a não-repetição dos grupos
     public void carregarHistorico(List<Grupo> gruposPassados)
     {
         this.historico.addAll(gruposPassados);
@@ -39,7 +39,7 @@ public class RandomGroupGeneratorLibrary {
         Grupo novo = new Grupo(a, b);
         if (historico.contains(novo))
         {
-            throw new Exception("Erro: Estes alunos já trabalharam juntos!");
+            throw new Exception("Erro: Estes alunos ja trabalharam juntos!");
         }
        historico.add(novo);
     }

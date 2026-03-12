@@ -39,8 +39,10 @@ public class Grupo {
      @Override
      public boolean equals(Object o)
      {
-     if (this == o) return true;
-     if ( o == null || getClass() != o.getClass()) return false;    
+     if (this == o)
+         return true;
+     if ( o == null || getClass() != o.getClass())
+         return false;    
      Grupo grupo = (Grupo) o;
      
     //Cria um grupo só para a pessoa que falta
@@ -59,13 +61,16 @@ public class Grupo {
     @Override
     public int hashCode()
     {
-        return Objects.hash(estudante1) + Objects.hash(estudante2);
+        int h1 = (estudante1 != null) ? estudante1.hashCode() : 0;
+        int h2 = (estudante2 != null) ? estudante2.hashCode() : 0;
+        
+        return h1 + h2;
     }
     
 //Método que define como o grupo aparece escrito:
     @Override
     public String toString()
     {
-        return "Grupo: " + estudante1.getNome() + " e " + estudante2.getNome();
+        return "Grupo: " + estudante1.getNome() + ", " + estudante1.getNmec() + " e " + estudante2.getNome() + ", " + estudante2.getNmec();
     }
 }

@@ -39,10 +39,12 @@ import java.util.Objects;
         @Override
         public boolean equals(Object o)
         {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Estudante estudante = (Estudante) o;
-            return nmec == estudante.nmec; 
+            if (this == o)
+                return true;
+            if (o == null || getClass() != o.getClass())
+                return false;
+            Estudante other = (Estudante) o;
+            return nmec == other.nmec; 
         }
  //Cria um código para cada aluno baseado no seu nmec, para assim ser encontrado rapidamente em listas de histórico:
          @Override
@@ -55,7 +57,7 @@ import java.util.Objects;
         @Override
         public String toString()
         {
-            return String.format("%s - %d", nome, nmec);
+            return String.format("%s, %d", nome, nmec);
         }
         
         
